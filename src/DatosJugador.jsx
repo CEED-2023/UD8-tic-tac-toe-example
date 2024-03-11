@@ -15,7 +15,7 @@ function DatosJugador(props) {
   return (
     <div className="row">
       <div>
-        <label htmlFor="jugador1">Jugador {num}: </label>
+        <label htmlFor={`jugador${num}`}>Jugador {num}: </label>
         <input id={`jugador${num}`}
           type="text"
           value={nombre}
@@ -23,7 +23,7 @@ function DatosJugador(props) {
         />
       </div>
       <div>
-        <label htmlFor="caracter2">Caracter {num}</label>
+        <label htmlFor={`caracter${num}`}>Caracter {num}</label>
         <input id={`caracter${num}`}
           type="text"
           maxLength="1"
