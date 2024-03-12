@@ -13,25 +13,12 @@ function App() {
 
   const [jugadores, setJugadores] = useState(JUGADORES_INICIALES)
 
-  function cambioDeNombre(num, nuevoNombre) {
-    const nuevosJugadores = [...jugadores]
-    nuevosJugadores[num - 1].nombre = nuevoNombre
-    setJugadores(nuevosJugadores)
-  }
-
-  function cambioDeSimbolo(num, nuevoSimbolo) {
-    const nuevosJugadores = [...jugadores]
-    nuevosJugadores[num - 1].simbolo = nuevoSimbolo
-    setJugadores(nuevosJugadores)
-  }
-
   return (
     <>
       <h1>Tic tac toe</h1>
       <Settings
         jugadores={jugadores}
-        onCambioNombre={cambioDeNombre}
-        onCambioSimbolo={cambioDeSimbolo}
+        onCambioJugadores={setJugadores}
       />
       <Tablero jugadores={jugadores}/>
     </>
