@@ -5,7 +5,7 @@ import Settings from './Settings'
 import Tablero from './Tablero'
 
 const JUGADORES_INICIALES = [
-  { nombre: 'Pepe', simbolo: 'X' },
+  { nombre: 'Ana', simbolo: 'X' },
   { nombre: 'Juan', simbolo: 'O' }
 ]
 
@@ -17,6 +17,7 @@ function App() {
     <>
       <h1>Tic tac toe</h1>
       <Settings
+        iniciales={JUGADORES_INICIALES}
         jugadores={jugadores}
         onCambioJugadores={setJugadores}
       />

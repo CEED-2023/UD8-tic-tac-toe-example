@@ -1,16 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import DatosJugador from "./DatosJugador"
 
-const JUGADORES_INICIALES = [
-  { nombre: 'Pepe', simbolo: 'X' },
-  { nombre: 'Juan', simbolo: 'O' }
-]
 
 function Settings(props) {
 
+  const { iniciales } = props
   const { onCambioJugadores } = props
 
-  const [jugadores, setJugadores] = useState(JUGADORES_INICIALES)
+  const [jugadores, setJugadores] = useState([
+    {nombre: '', simbolo: ''},
+    {nombre: '', simbolo: ''}
+  ])
+
+  useEffect(
+    () => {
+      setJugadores(iniciales)
+    }
+  ,[iniciales, setJugadores])
+
 
   function cambioDeNombre(num, nuevoNombre) {
     const nuevosJugadores = [...jugadores]
@@ -29,15 +36,15 @@ function Settings(props) {
       <h1>Settings</h1>
       <DatosJugador
         num={1}
-        nombre={jugadores[0].nombre}
-        simbolo={jugadores[0].simbolo}
+        nombre={jugadores[0]?.nombre}
+        simbolo={jugadores[0]?.simbolo}
         onCambioNombre={cambioDeNombre}
         onCambioSimbolo={cambioDeSimbolo}
       />
       <DatosJugador
         num={2}
-        nombre={jugadores[1].nombre}
-        simbolo={jugadores[1].simbolo}
+        nombre={jugadores[1]?.nombre}
+        simbolo={jugadores[1]?.simbolo}
         onCambioNombre={cambioDeNombre}
         onCambioSimbolo={cambioDeSimbolo}
       />
