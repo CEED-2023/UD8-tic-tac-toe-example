@@ -33,7 +33,7 @@ function App() {
         onCambioNombre={cambioDeNombre}
         onCambioSimbolo={cambioDeSimbolo}
       />
-      <Tablero />
+      <Tablero jugadores={jugadores}/>
     </>
   )
 }

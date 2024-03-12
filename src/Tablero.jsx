@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import Celda from './Celda'
 
-function Tablero() {
+function Tablero(props) {
+
+  const { jugadores } = props
+  const [ turno, setTurno ] = useState(0)
 
   const datosCeldas = [
     [ 'X', 'O', '' ],
@@ -8,9 +12,11 @@ function Tablero() {
     [ '', '', '']
   ]
 
+  const jugador = jugadores[turno]
+
   return (
     <div className="game">
-      <h1>Turno de Pepe (X)</h1>
+      <h1>Turno de {`${jugador.nombre}`} ({`${jugador.simbolo}`})</h1>
       <div className="board">
         {
           datosCeldas.map((fila, i) => {
