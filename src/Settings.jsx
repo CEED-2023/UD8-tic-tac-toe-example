@@ -16,7 +16,7 @@ function Settings(props) {
     () => {
       setJugadores(iniciales)
     }
-  ,[iniciales, setJugadores])
+  ,[iniciales])
 
 
   function cambioDeNombre(num, nuevoNombre) {
