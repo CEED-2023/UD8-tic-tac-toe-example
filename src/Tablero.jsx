@@ -17,6 +17,9 @@ function Tablero(props) {
 
   function onCeldaClick(i, j) {
     console.log('Celda clickeada:', i, j)
+    const nuevasCeldas = [...celdas]
+    nuevasCeldas[i][j] = 'X'
+    setCeldas(nuevasCeldas)
   }
 
   return (
