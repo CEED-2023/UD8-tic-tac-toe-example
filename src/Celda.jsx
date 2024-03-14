@@ -1,8 +1,9 @@
 function Celda(props) {
+  const { onClick } = props
   const { valor } = props
 
   return (
-    <div className="cell">
+    <div onClick={onClick} className="cell">
       {valor}
     </div>
   )
