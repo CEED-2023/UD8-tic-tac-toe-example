@@ -16,10 +16,12 @@ function Tablero(props) {
   const jugador = jugadores[turno]
 
   function onCeldaClick(i, j) {
-    console.log('Celda clickeada:', i, j)
+    if (celdas[i][j] !== '') return
+
     const nuevasCeldas = [...celdas]
-    nuevasCeldas[i][j] = 'X'
+    nuevasCeldas[i][j] = jugador.simbolo
     setCeldas(nuevasCeldas)
+    setTurno((turno + 1) % jugadores.length)
   }
 
   return (
